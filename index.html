@@ -1,25 +1,56 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Technical writing portfolio showcasing product documentation, API references, troubleshooting guides, and release notes.">
   <title>Technical Writing Portfolio</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <h1>Technical Writing Portfolio</h1>
-  <p>Welcome to my professional technical writing portfolio.</p>
-
-  <h2>About Me</h2>
-  <p>I am an experienced technical writer who creates
-  clear, useful documentation for technical audiences.</p>
-
-  <h2>Writing Samples</h2>
-  <ul>
-    <li><a href="samples/user-guide.html">User Guide</a></li>
-    <li><a href="samples/api-reference.html">API Reference</a></li>
-    <li><a href="samples/troubleshooting.html">Troubleshooting Guide</a></li>
-    <li><a href="samples/release-notes.html">Release Notes</a></li>
-  </ul>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <a class="brand" href="index.html"><span class="brand-mark">TW</span><span>Your Name <small>Technical Writing Portfolio</small></span></a>
+    <a class="top-link" href="contact.html">Contact</a>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="nav-label">PORTFOLIO</div>
+      <a class="nav-link active" href="index.html">Overview</a>
+      <a class="nav-link" href="about.html">About me</a>
+      <div class="nav-label">WRITING SAMPLES</div>
+      <a class="nav-link" href="samples/user-guide.html">Product user guide</a>
+      <a class="nav-link" href="samples/api-reference.html">API reference</a>
+      <a class="nav-link" href="samples/troubleshooting.html">Troubleshooting guide</a>
+      <a class="nav-link" href="samples/release-notes.html">Release notes</a>
+      <div class="nav-label">MORE</div>
+      <a class="nav-link" href="skills.html">Tools &amp; skills</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+      <div class="sidebar-note">A curated collection of technical communication work.</div>
+    </aside>
+    <main id="main" class="content">
+      <div class="eyebrow">TECHNICAL WRITING PORTFOLIO</div>
+      <h1>Making complex things easier to use.</h1>
+      <p class="lead">I create clear, structured documentation that helps people understand products, complete tasks, and solve problems with confidence.</p>
+      <div class="callout"><strong>Welcome.</strong> This portfolio highlights selected examples of product documentation, API reference writing, troubleshooting content, and release communication.</div>
+      <h2>Featured writing samples</h2>
+      <div class="sample-grid">
+        <a class="sample-card" href="samples/user-guide.html"><span class="card-kicker">PRODUCT DOCUMENTATION</span><h3>Getting started with Atlas</h3><p>A task-oriented guide to setting up a workspace and creating a first project.</p><span class="read-more">Read sample →</span></a>
+        <a class="sample-card" href="samples/api-reference.html"><span class="card-kicker">API DOCUMENTATION</span><h3>Tasks API reference</h3><p>Endpoint documentation with authentication, parameters, examples, and error responses.</p><span class="read-more">Read sample →</span></a>
+        <a class="sample-card" href="samples/troubleshooting.html"><span class="card-kicker">SUPPORT CONTENT</span><h3>Troubleshoot sync issues</h3><p>A diagnostic workflow that helps users identify and resolve common sync problems.</p><span class="read-more">Read sample →</span></a>
+        <a class="sample-card" href="samples/release-notes.html"><span class="card-kicker">RELEASE COMMUNICATION</span><h3>Product release notes</h3><p>A concise, user-focused summary of new features, improvements, and fixes.</p><span class="read-more">Read sample →</span></a>
+      </div>
+      <h2>Documentation principles</h2>
+      <ul class="principles">
+        <li><strong>Task-oriented:</strong> organize content around what readers need to accomplish.</li>
+        <li><strong>Consistent:</strong> use predictable terminology, structure, and formatting.</li>
+        <li><strong>Actionable:</strong> provide prerequisites, steps, examples, and expected results.</li>
+        <li><strong>Accessible:</strong> write in plain language and make information easy to scan.</li>
+      </ul>
+      <div class="footer">© <span id="year"></span> Your Name · Built with GitHub Pages</div>
+    </main>
+  </div>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>
