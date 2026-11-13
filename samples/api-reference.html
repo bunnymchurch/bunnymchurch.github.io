@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Tasks API reference | Writing Sample</title><link rel="stylesheet" href="../assets/css/styles.css"></head>
+<body><a class="skip-link" href="#main">Skip to content</a><header class="topbar"><button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button><a class="brand" href="../index.html"><span class="brand-mark">TW</span><span>Your Name <small>Technical Writing Portfolio</small></span></a><a class="top-link" href="../contact.html">Contact</a></header>
+<div class="layout"><aside class="sidebar" id="sidebar"><div class="nav-label">PORTFOLIO</div><a class="nav-link" href="../index.html">Overview</a><a class="nav-link" href="../about.html">About me</a><div class="nav-label">WRITING SAMPLES</div><a class="nav-link" href="user-guide.html">Product user guide</a><a class="nav-link active" href="api-reference.html">API reference</a><a class="nav-link" href="troubleshooting.html">Troubleshooting guide</a><a class="nav-link" href="release-notes.html">Release notes</a><div class="nav-label">MORE</div><a class="nav-link" href="../skills.html">Tools &amp; skills</a><a class="nav-link" href="../contact.html">Contact</a></aside>
+<main id="main" class="content"><div class="eyebrow">SAMPLE 02 · API DOCUMENTATION</div><h1>Tasks API reference</h1><p class="lead">Create and retrieve tasks in an Atlas workspace.</p><div class="sample-meta"><span>Audience: Developers</span><span>Content type: Endpoint reference</span><span>Product: Fictional sample</span></div>
+<div class="callout"><strong>Sample note:</strong> This API and its responses are fictional examples for portfolio demonstration. They are not a live service contract.</div>
+<h2>Base URL</h2><pre><code>https://api.atlas.example.com/v1</code></pre>
+<h2>Authentication</h2><p>Send an API token in the <code>Authorization</code> header. Treat tokens as secrets and do not include them in client-side code or public repositories.</p><pre><code>Authorization: Bearer YOUR_API_TOKEN</code></pre>
+<h2>Create a task</h2><p><span class="method">POST</span> <code>/workspaces/{workspace_id}/tasks</code></p><p>Creates a task in the specified workspace.</p>
+<h3>Path parameters</h3><table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>workspace_id</code></td><td>string</td><td>Unique identifier of the workspace.</td></tr></tbody></table>
+<h3>Request body</h3><table><thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td><code>title</code></td><td>string</td><td>Yes</td><td>Task title. Must contain 1–120 characters.</td></tr><tr><td><code>description</code></td><td>string</td><td>No</td><td>Additional task details.</td></tr><tr><td><code>due_date</code></td><td>string</td><td>No</td><td>Due date in ISO 8601 format (YYYY-MM-DD).</td></tr></tbody></table>
+<h3>Example request</h3><pre><code>curl -X POST \
+  "https://api.atlas.example.com/v1/workspaces/ws_123/tasks" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Review onboarding guide",
+    "description": "Check links and screenshots",
+    "due_date": "2026-12-01"
+  }'</code></pre>
+<h3>Example response</h3><pre><code>{
+  "id": "task_789",
+  "title": "Review onboarding guide",
+  "description": "Check links and screenshots",
+  "due_date": "2026-12-01",
+  "status": "open",
+  "created_at": "2026-11-12T14:30:00Z"
+}</code></pre>
+<h2>Response codes</h2><table><thead><tr><th>Code</th><th>Meaning</th><th>Recommended action</th></tr></thead><tbody><tr><td><code>201</code></td><td>Task created.</td><td>Store the returned task ID.</td></tr><tr><td><code>400</code></td><td>Invalid request.</td><td>Check required fields and field formats.</td></tr><tr><td><code>401</code></td><td>Authentication failed.</td><td>Verify the API token.</td></tr><tr><td><code>404</code></td><td>Workspace not found.</td><td>Check the workspace ID and access.</td></tr><tr><td><code>429</code></td><td>Rate limit exceeded.</td><td>Wait before retrying; use backoff.</td></tr></tbody></table>
+<h2>Writing decisions demonstrated</h2><ul><li>Endpoint purpose and HTTP method are easy to scan.</li><li>Parameters and request fields are defined in tables.</li><li>Examples show a complete request and response.</li><li>Error codes include actionable next steps.</li></ul>
+<p class="back-link"><a href="../index.html">← Back to portfolio overview</a></p><div class="footer">© <span id="year"></span> Your Name</div></main></div><script src="../assets/js/site.js"></script></body></html>
